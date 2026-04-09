@@ -1,0 +1,8 @@
+Package: netuyo-grub-spinner
+Priority: optional
+Section: main
+Maintainer: Reinin Oyama
+Architecture: all
+Version: 0.0.1
+Depends: grub-customizer, plymouth-theme-spinner
+Description: Grub theme and boot spinner for netuyo linux

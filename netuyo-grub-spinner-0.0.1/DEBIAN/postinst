@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+cp -f /usr/share/netuyo/forboot/background.png /usr/share/grub/lubuntu-grub-theme/background.png
+cp -f /usr/share/netuyo/forboot/preview.png /usr/share/grub/lubuntu-grub-theme/preview.png
+cp -f /usr/share/netuyo/forboot/lubutu.png /usr/share/grub/lubuntu-grub-theme/icons/lubuntu.png
+cp -f /usr/share/netuyo/forboot/bgrt-fallback.png /usr/share/plymouth/themes/spinner/bgrt-fallback.png
+cp -f /usr/share/netuyo/forboot/watermark.png /usr/share/plymouth/themes/spinner/watermark.png
+cp -f /usr/share/netuyo/forboot/ubuntu-text.plymouth /usr/share/plymouth/themes/ubuntu-text/.
+cp -f /usr/share/netuyo/forboot/ubuntu-text.plymouth.in /usr/share/plymouth/themes/ubuntu-text/.
+rm -f /etc/alternatives/default.plymouth
+ln -s /usr/share/plymouth/themes/bgrt/bgrt.plymouth /etc/alternatives/default.plymouth
+rm -f /etc/alternatives/text.plymouth
+ln -s /usr/share/plymouth/themes/ubuntu-text/ubuntu-text.plymouth /etc/alternatives/text.plymouth
+update-initramfs -u -k all
+update-grub
+exit 0
